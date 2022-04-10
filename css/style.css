@@ -137,6 +137,68 @@ h6 {
   font-size: inherit;
 }
 
+body {
+  background: #080a0b;
+  font-weight: 400;
+}
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+  /* 		position: fixed;
+  		width: 100%;
+  		height: 100%;
+  		top: 0;
+  		left: 0;
+  		overflow: hidden; */
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+/* .page__wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+} */
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  max-width: 75rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
 #preloader {
   position: fixed;
   left: 0;
@@ -307,68 +369,6 @@ h6 {
 
 .ldio-jig6iiuvhud div {
   box-sizing: content-box;
-}
-
-body {
-  background: #080a0b;
-  font-weight: 400;
-}
-.lock body {
-  overflow: hidden;
-  touch-action: none;
-}
-.wrapper {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.wrapper > main {
-  flex: 1 1 auto;
-  /* 		position: fixed;
-  		width: 100%;
-  		height: 100%;
-  		top: 0;
-  		left: 0;
-  		overflow: hidden; */
-}
-.wrapper > * {
-  min-width: 0;
-}
-
-/* .page__wrapper {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	height: 100%;
-} */
-/*
-(i) Стили будут применяться ко 
-всем классам содержащим *__container
-Например header__container, main__container и т.д.
-Снипет (HTML): cnt
-*/
-[class*=__container] {
-  max-width: 75rem;
-  box-sizing: content-box;
-  margin: 0 auto;
-  padding: 0 0.9375rem;
-}
-
-[class*=-ibg] {
-  position: relative;
-}
-[class*=-ibg] img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-}
-
-[class*=-ibg_contain] img {
-  object-fit: contain;
 }
 
 .page-section {
@@ -1210,11 +1210,6 @@ body {
 }
 @media (max-width: 450px) {
   .features__item-title {
-    font-size: 28px;
-  }
-}
-@media (max-width: 380px) {
-  .features__item-title {
     font-size: 22px;
   }
 }
@@ -1731,6 +1726,8 @@ html.fp-enabled,
 .fp-slide,
 .fp-slidesContainer {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   display: block;
 }
 
